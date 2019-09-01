@@ -10,19 +10,13 @@ const App = () => {
   const [amenity, setAmenity] = useState("");
   const [city, setCity] = useState("");
   const [isMapView, setIsMapView] = useState(false);
-  const renderPageView = () => {
-    if (!isMapView) {
-      return <Landing setIsMapView={setIsMapView} location={location} city={city} amenity={amenity} setLocation={setLocation} setAmenity={setAmenity} setCity={setCity}/>
-    } else {
-      return <Main location={location} city={city} amenity={amenity}/>
-    }
-  }
+  
   return (
     <Router>
       <NavBar city={city} amenity={amenity}/>
       <Switch>
-        <Route exact path="/" render={renderPageView} />
-        <Route exact path="/main" render={renderPageView} />
+        <Route exact path="/" render={() => <Landing setIsMapView={setIsMapView} location={location} city={city} amenity={amenity} setLocation={setLocation} setAmenity={setAmenity} setCity={setCity}/>} />
+        <Route exact path="/main" render={() => <Main location={location} city={city} amenity={amenity}/>} />
       </Switch>
     </Router>
   );

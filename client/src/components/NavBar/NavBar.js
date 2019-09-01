@@ -3,7 +3,7 @@ import './NavBar.sass';
 
 const NavBar = (props) => {
     return(
-        <nav className="navbar navbar-dark bg-dark">
+        <nav className="navbar">
             <span className="navbar-brand">Hey!</span>
         </nav>
     )

@@ -9,7 +9,11 @@ const mapFuncs = {
             maxZoom: 18,
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
         }).addTo(myMap)
-    }
+    },
+    loadHeatMap: () => {
+
+    },
+    
 }
 
 export default mapFuncs;
