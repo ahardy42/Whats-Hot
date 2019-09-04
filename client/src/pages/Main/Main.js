@@ -2,16 +2,15 @@ import React, {useState, useEffect} from 'react';
 import { Redirect } from 'react-router-dom';
 import L from 'leaflet';
 import API from '../../utils/API';
-import 'leaflet.locatecontrol/dist/L.Control.Locate.css';
 import 'leaflet.locatecontrol';
 import 'leaflet.heat';
-import 'leaflet/dist/leaflet.css';
 import './Main.sass';
 
 const Main = ({isMapView, setIsMapView, amenity}) => {
     const [myMap, setMyMap] = useState({});
-    const [lc, setLc] = useState({});
+    const [lc, setLc] = useState([]);
     const [amenitites, setAmenities] = useState([]);
+    const [myLocation, setMyLocation] = useState({});
     useEffect(()=> {
         // render the map and find the user
         let newMap = L.map("map").setView([0, 0], 2);
@@ -33,6 +32,7 @@ const Main = ({isMapView, setIsMapView, amenity}) => {
                 let latLng = [position.coords.latitude, position.coords.longitude];
                 API.getAmenities(latLng, amenity)
                 .then(response => {
+                    setMyLocation(latLng);
                     setAmenities(response);
                 })
                 .catch(err => {
@@ -56,7 +56,12 @@ const Main = ({isMapView, setIsMapView, amenity}) => {
     // function to create the heatmap layer once ameneties have been loaded
     useEffect(() => {
         if (amenitites.length) {
-            L.heatLayer(amenitites).addTo(myMap);
+            let heat = L.heatLayer(amenitites).addTo(myMap);
+            let locationLatLng = L.latLng(myLocation);
+            console.log(locationLatLng);
+            let arrayForBounds = heat._latlngs.filter(latLng => locationLatLng.distanceTo(latLng) <= 5000);
+            myMap.fitBounds(arrayForBounds);
+            console.log(L.latLngBounds(arrayForBounds).isValid())
         }
     }, [amenitites]);
 
