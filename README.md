@@ -5,8 +5,9 @@ Location based Heat Map Generator
 
 - Full Stack, MVC design pattern, single page web app
 - Views:
-  - React front end
-  - Leaflet.js library for map visualization
+  - React front end using hooks for all stateful components
+  - MaterializeUI react component library
+  - Leaflet.js library for map visualization, heatmap and location plugins
 - Controller:
   - API created with express.js
 - Model:
@@ -18,9 +19,9 @@ This app will use your location to provide you with a visual representation of n
 
 The idea is that you are not searching specifically for a restaurant / bar etc. but, you are finding the location to begin window shopping. 
 
-This idea came from
+This idea came from how I find restaurants in a new city:
 
-1. how I find restaurants in a new city, squinting at Yelp's map to see where I think most restaurants are located...
+1. squint at Yelp's map to see where I think most restaurants are located...
 2. traveling to that area to walk around and see what looks appealing! 
 
 ## How it works
@@ -39,4 +40,4 @@ the back end is set up to run on port 8080 while react is running on 3000. the p
 
 ### Enjoy! 
 
-## Running Example: [running app](http://www.ahardy42.com)
+## Running Example: TBD (to be deployed)

@@ -1,0 +1,54 @@
+@import ../../../colorVars
+    
+.landing
+    background: url("https://media.giphy.com/media/mjORAqVKYtW7e/giphy.gif") no-repeat center center fixed
+    background-size: cover
+
+#landing-card
+    display: flex
+    align-items: center
+    justify-content: center
+    .card
+        flex-grow: 1
+        align-items: center
+        border: 2px solid $awesomeGreen
+        background-color: $wickedGray
+        border-radius: 5px
+        box-shadow: 3px 3px 10px $shadow
+
+.card-title
+    margin: 0.5em 0 2em 0
+    color: $awesomeGreen
+
+form
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 2em
+    .form-check
+        padding-left: 0
+        [type=radio]
+            display: none
+        [type=radio] + label
+            box-shadow: 3px 3px 10px $shadow
+            padding: 5px
+            border: 2px solid $awesomeGreen
+        [type=radio]:hover + label
+            box-shadow: 5px 5px 10px $shadow
+        [type=radio]:checked + label
+            box-shadow: none
+            background-color: $awesomeGreen
+            border: 2px solid $awesomeGreen
+            
+    a
+        margin:
+            top: 2em
+
+.find-me-button
+    border: 2px solid $awesomeGreen
+    box-shadow: 3px 3px 10px $shadow
+    color: $awesomeGreen
+    &:active
+        box-shadow: none
+    &:hover
+        box-shadow: 5px 5px 10px $shadow

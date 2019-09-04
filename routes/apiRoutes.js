@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const client = yelp.client(process.env.YELP_KEY);
 
-router.get("/heatmap", (req, res) => {
+router.post("/heatmap", (req, res) => {
     // route to pull in 100 nearby spots
     let {latLng, amenity} = req.body; // expecting user's lat/lng in decimal format, and a search term
     client.search({
