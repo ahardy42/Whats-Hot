@@ -6,17 +6,14 @@ import Landing from './pages/Landing/Landing';
 import './App.sass';
 
 const App = () => {
-  const [location, setLocation] = useState({});
   const [amenity, setAmenity] = useState("");
-  const [city, setCity] = useState("");
   const [isMapView, setIsMapView] = useState(false);
-  
   return (
     <Router>
-      <NavBar city={city} amenity={amenity}/>
+      <NavBar amenity={amenity}/>
       <Switch>
-        <Route exact path="/" render={() => <Landing setIsMapView={setIsMapView} location={location} city={city} amenity={amenity} setLocation={setLocation} setAmenity={setAmenity} setCity={setCity}/>} />
-        <Route exact path="/main" render={() => <Main location={location} city={city} amenity={amenity}/>} />
+        <Route exact path="/" render={() => <Landing isMapView={isMapView} setIsMapView={setIsMapView} amenity={amenity} setAmenity={setAmenity}/>} />
+        <Route exact path="/main" render={() => <Main isMapView={isMapView} setIsMapView={setIsMapView} amenity={amenity}/>} />
       </Switch>
     </Router>
   );
