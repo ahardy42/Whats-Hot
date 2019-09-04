@@ -58,10 +58,8 @@ const Main = ({isMapView, setIsMapView, amenity}) => {
         if (amenitites.length) {
             let heat = L.heatLayer(amenitites).addTo(myMap);
             let locationLatLng = L.latLng(myLocation);
-            console.log(locationLatLng);
             let arrayForBounds = heat._latlngs.filter(latLng => locationLatLng.distanceTo(latLng) <= 5000);
-            myMap.fitBounds(arrayForBounds);
-            console.log(L.latLngBounds(arrayForBounds).isValid())
+            myMap.flyToBounds(arrayForBounds);
         }
     }, [amenitites]);
 
