@@ -34,7 +34,7 @@ const Landing = ({amenity, setAmenity, setIsMapView, isMapView, history}) => {
                         <form>
                             <div className="form-row">
                                 <div className="col">
-                                    {/* <RadioInput
+                                    <RadioInput
                                         handleCheck={handleCheck}
                                         isChecked={amenity === "restaurant" ? true : false}
                                         name="amenity"
@@ -43,7 +43,7 @@ const Landing = ({amenity, setAmenity, setIsMapView, isMapView, history}) => {
                                         // logo={DiningLogo}
                                     >
                                         <DiningLogo />
-                                    </RadioInput> */}
+                                    </RadioInput>
                                     <RadioInput
                                         handleCheck={handleCheck}
                                         isChecked={amenity === "bar" ? true : false}
