@@ -29,6 +29,7 @@ This idea came from how I find restaurants in a new city:
 - Yelp's API is searched using paramaters obtained from your mobile browser's geolocation API. 
 - The resulting cluster of nearby restaurants' lat / long values are fed into leaflet's heatmap plugin
 - The heatmap is viewed as an overlay layer on top of a leaflet baselayer which is being served up by openstreetmap's API
+- uses component testing / travis CI for continuous integration of code
 
 ## How to install on your machine
 
