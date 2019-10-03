@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.sass';
 
-const NavBar = (props) => {
-    return(
-        <nav className="navbar">
-            <span className="navbar-brand">Hey!</span>
+const NavBar = ({ isMapView }) => {
+    return (
+        <nav className="myNav">
+            {isMapView ? (
+                <Link to="/">Back to search</Link>
+            ) : null}
         </nav>
     )
 }

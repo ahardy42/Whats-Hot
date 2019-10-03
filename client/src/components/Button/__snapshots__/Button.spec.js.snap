@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button render test suite renders correctly 1`] = `
+<button
+  className="btn "
+>
+  Hey!
+</button>
+`;

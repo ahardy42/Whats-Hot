@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Redirect } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import RadioInput from '../../components/RadioInput/RadioInput';
 import {ReactComponent as BeerLogo} from './icons/icons8-beer-mug.svg';
@@ -7,7 +7,7 @@ import {ReactComponent as DiningLogo} from './icons/icons8-dining-room.svg';
 import {ReactComponent as ShoppingLogo} from './icons/icons8-market-square.svg';
 import './Landing.sass';
 
-const Landing = ({amenity, setAmenity, setIsMapView, isMapView}) => {
+const Landing = ({amenity, setAmenity, setIsMapView, isMapView, history}) => {
     const handleClick = (event) => {
         if (amenity === "") {
             return;
@@ -19,7 +19,11 @@ const Landing = ({amenity, setAmenity, setIsMapView, isMapView}) => {
         setAmenity(id);
     }
     if (isMapView) {
-        return <Redirect to="/main" />
+        return (
+            <Router>
+                <Redirect to="/main" />
+            </Router>
+        )
     }
     return(
         <div className="row landing">
