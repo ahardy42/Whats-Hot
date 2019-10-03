@@ -5,15 +5,16 @@
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:travis": "node server.js && npm run build && npm run travis-test",
+    "start:travis": "node server.js && npm run build:travis && npm run travis-test",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
+    "build:travis": "cd client && npm run build && cd ..",
     "heroku-postbuild": "npm run build",
-    "travis-test": "npm run test && cd .. && npm run test-mocha",
+    "travis-test": "npm run test-mocha && npm run test",
     "test-mocha": "mocha --exit",
     "test": "cd client && npm run test"
   },
