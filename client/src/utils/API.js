@@ -7,6 +7,15 @@ const API = {
         });
         let json = await response.json();
         return json
+    },
+    getBoundary: async latLng => {
+        let response = await fetch("/api/boundary", {
+            method: "post",
+            body: JSON.stringify(latLng),
+            headers: {"Content-Type" : "application/json"}
+        });
+        let json = await response.json();
+        return json;
     }
 }
 

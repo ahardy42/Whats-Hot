@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navbar render test renders the navbar in landing page view 1`] = `
+<nav
+  className="myNav"
+/>
+`;

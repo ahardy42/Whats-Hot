@@ -39,6 +39,27 @@ router.post("/heatmap", (req, res) => {
     }).catch(error => {
         res.json(error);
     });
+});
+
+router.post("/boundary", (req, res) => {
+    let latLng = req.body;
+    let lat = latLng[0];
+    let lng = latLng[1];
+    let url = `https://nominatim.openstreetmap.org/reverse?format=geojson&lat=${lat}&lon=${lng}&polygon_geojson=1&zoom=10`;
+    console.log(url);
+    axios.get(url)
+    .then(response => {
+        let {city, state} = response.data.features[0].properties.address;
+        let boundary = {
+            name : `${city}, ${state}`,
+            boundingBox : response.data.features[0].bbox,
+            geoJSON : response.data.features[0].geometry
+        }
+        res.json(boundary);
+    })
+    .catch(error => {
+        console.log(error);
+    })
 })
 
 module.exports = router;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the snapshot test renders a radio input 1`] = `
+<div
+  className="form-check form-check-inline "
+>
+  <input
+    checked={true}
+    className="form-check-input"
+    data-testid="test-radio"
+    id="test-radio"
+    name="test-radio"
+    onChange={[MockFunction]}
+    type="radio"
+    value="test"
+  />
+  <label
+    className="form-check-label"
+    htmlFor="test-radio"
+  >
+    <svg>
+      icons8-beer-mug.svg
+    </svg>
+  </label>
+</div>
+`;

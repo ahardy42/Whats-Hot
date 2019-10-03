@@ -10,9 +10,9 @@ const App = () => {
   const [isMapView, setIsMapView] = useState(false);
   return (
     <Router>
-      <NavBar amenity={amenity}/>
+      <NavBar amenity={amenity} isMapView={isMapView} />
       <Switch>
-        <Route exact path="/" render={() => <Landing isMapView={isMapView} setIsMapView={setIsMapView} amenity={amenity} setAmenity={setAmenity}/>} />
+        <Route exact path="/" render={(props) => <Landing {...props} isMapView={isMapView} setIsMapView={setIsMapView} amenity={amenity} setAmenity={setAmenity}/>} />
         <Route exact path="/main" render={() => <Main isMapView={isMapView} setIsMapView={setIsMapView} amenity={amenity}/>} />
       </Switch>
     </Router>

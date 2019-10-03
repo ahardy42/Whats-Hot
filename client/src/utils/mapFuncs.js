@@ -27,7 +27,8 @@ const mapFuncs = {
     },
     locate: (lc) => {
         lc.start();
-    }
+    },
+    
     
 }
 
