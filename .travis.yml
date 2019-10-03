@@ -6,3 +6,7 @@ cache :
     - node_modules
     - client/node_modules
 install : npm install && cd client npm install
+script :
+  - npm run start
+  - npm run test-mocha
+  - npm run test
