@@ -14,7 +14,7 @@
     "build": "cd client && npm run build",
     "build:travis": "cd client && npm run build && cd ..",
     "heroku-postbuild": "npm run build",
-    "test:server": "node server.js && mocha --exit",
+    "test:server": "mocha --exit",
     "test:client": "cd client && npm run test"
   },
   "repository": {
