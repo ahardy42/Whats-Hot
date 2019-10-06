@@ -7,4 +7,5 @@ cache :
     - client/node_modules
 install : npm install && cd client npm install && cd ..
 script :
-  - npm run start:travis
+  - npm run test:server
+  - npm run test:client
