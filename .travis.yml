@@ -6,3 +6,6 @@ cache :
     - node_modules
     - client/node_modules
 install : npm install && cd client npm install
+script :
+  - cd ..
+  - npm run test:client
