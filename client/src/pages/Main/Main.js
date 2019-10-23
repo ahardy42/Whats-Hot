@@ -6,7 +6,7 @@ import 'leaflet.locatecontrol';
 import 'leaflet.heat';
 import './Main.sass';
 
-const Main = ({isMapView, setIsMapView, amenity, match}) => {
+const Main = ({isMapView, setIsMapView, amenity, setAmenity, match}) => {
     const [myMap, setMyMap] = useState(null);
     const [lc, setLc] = useState([]);
     const [layerControl, setLayerControl] = useState(null);
@@ -83,6 +83,7 @@ const Main = ({isMapView, setIsMapView, amenity, match}) => {
     useEffect(() => {
         return () => {
             setIsMapView(false);
+            setAmenity("");
         };
     }, []);
     if (!isMapView) {

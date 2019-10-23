@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Redirect } from 'react-router-dom';
+import React, {useEffect} from 'react';
 import Button from '../../components/Button/Button';
 import RadioInput from '../../components/RadioInput/RadioInput';
 import {ReactComponent as BeerLogo} from './icons/icons8-beer-mug.svg';
@@ -18,13 +17,11 @@ const Landing = ({amenity, setAmenity, setIsMapView, isMapView, history}) => {
         let {id} = event.target;
         setAmenity(id);
     }
-    if (isMapView) {
-        return (
-            <Router>
-                <Redirect to="/main" />
-            </Router>
-        )
-    }
+    useEffect(() => {
+        if (isMapView) {
+            history.push("/main");
+        }
+    }, [isMapView]);
     return(
         <div className="row landing">
             <div className="container col-md-6 offset-md-3 col-12" id="landing-card">
