@@ -1,4 +1,5 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import RadioInput from '../../components/RadioInput/RadioInput';
 import {ReactComponent as BeerMug} from './icons/icons8-beer-mug.svg';
 import { render, cleanup, fireEvent } from '@testing-library/react';
@@ -9,10 +10,6 @@ import Landing from './Landing';
 
 describe('unit test suit for landing page', () => {
     afterEach(cleanup);
-    it('redirects to map view if isMapView prop', () => {
-        const {container} = render(<Landing isMapView={true} />);
-        expect(container.className).toBe("");
-    });
     it('renders a landing page if isMapView prop is false', () => {
         const {container} = render(<Landing isMapView={false} />);
         expect(container.firstChild.className).toBe("row landing");
